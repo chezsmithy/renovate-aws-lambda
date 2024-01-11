@@ -66,7 +66,7 @@ lambdas:
       memory_size: 1024
       timeout: 900
     - function: 'test-main-lambda-java'
-      runtime: 'java11'
+      runtime: 'java21'
       handler: 'main.lambda_handler'
       description: 'Update info-main process'
       source_dir: 'src'

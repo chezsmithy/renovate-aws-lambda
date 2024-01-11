@@ -1,5 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
   "packageRules": [
     {
       "description": "replace deprecated go1.x lambda with provided.al2",

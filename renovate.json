@@ -1,0 +1,31 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "description": "replace deprecated go1.x lambda with provided.al2",
+      "matchDatasources": "endoflife-date-aws-lambda",
+      "matchPackageNames": ["go"],
+      "matchCurrentValue": "/^1.x/",
+      "replacementName": "provided.",
+      "replacementVersion": "al2"
+    },
+    {
+      "description": "pin nodejs lambda version below 20",
+      "matchDatasources": "endoflife-date-aws-lambda",
+      "matchPackageNames": ["nodejs"],
+      "allowedVersions": "<20.x"
+    }
+  ],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Updates aws lambda Versions in custom platform appspec",
+      "fileMatch": "platform-appsepc.yml",
+      "matchStrings": [
+        "runtime:\\s*'(?<depName>(go|provided\\.|java|python|nodejs))(?<currentValue>[a-z,0-9]*.[0-9,x]*)'"
+      ],
+      "autoReplaceStringTemplate": "runtime: '{{depName}}{{newVersion}}'",
+      "datasourceTemplate": "endoflife-date-aws-lambda"
+    }
+  ]
+}

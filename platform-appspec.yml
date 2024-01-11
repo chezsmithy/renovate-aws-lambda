@@ -1,0 +1,89 @@
+---
+lambdas:
+  version: 0.0.2
+  lambda_functions:
+    - function: 'test-main-lambda-go'
+      runtime: 'go1.x'
+      handler: 'main.lambda_handler'
+      description: 'Update info-main process'
+      source_dir: 'src'
+      vpc_attached: True
+      egress_rules:
+        - proto: tcp
+          ports:
+            - 443
+            - 5432
+            - 1433
+            - 55010
+          cidr_ip: 0.0.0.0/0
+          rule_desc: 'access to aws services needed'
+      environment_variables:
+        ENV: "{{ env }}"
+        CUSTOMER: 'tst'
+        DEBUG: "{{ debug | default('false') }}"
+      memory_size: 1024
+      timeout: 900
+    - function: 'test-main-lambda-python'
+      runtime: 'python3.7'
+      handler: 'main.lambda_handler'
+      description: 'Update info-main process'
+      source_dir: 'src'
+      vpc_attached: True
+      egress_rules:
+        - proto: tcp
+          ports:
+            - 443
+            - 5432
+            - 1433
+            - 55010
+          cidr_ip: 0.0.0.0/0
+          rule_desc: 'access to aws services needed'
+      environment_variables:
+        ENV: "{{ env }}"
+        CUSTOMER: 'tst'
+        DEBUG: "{{ debug | default('false') }}"
+      memory_size: 1024
+      timeout: 900
+    - function: 'test-main-lambda-nodejs'
+      runtime: 'nodejs16.x'
+      handler: 'main.lambda_handler'
+      description: 'Update info-main process'
+      source_dir: 'src'
+      vpc_attached: True
+      egress_rules:
+        - proto: tcp
+          ports:
+            - 443
+            - 5432
+            - 1433
+            - 55010
+          cidr_ip: 0.0.0.0/0
+          rule_desc: 'access to aws services needed'
+      environment_variables:
+        ENV: "{{ env }}"
+        CUSTOMER: 'tst'
+        DEBUG: "{{ debug | default('false') }}"
+      memory_size: 1024
+      timeout: 900
+    - function: 'test-main-lambda-java'
+      runtime: 'java11'
+      handler: 'main.lambda_handler'
+      description: 'Update info-main process'
+      source_dir: 'src'
+      vpc_attached: True
+      egress_rules:
+        - proto: tcp
+          ports:
+            - 443
+            - 5432
+            - 1433
+            - 55010
+          cidr_ip: 0.0.0.0/0
+          rule_desc: 'access to aws services needed'
+      environment_variables:
+        ENV: "{{ env }}"
+        CUSTOMER: 'tst'
+        DEBUG: "{{ debug | default('false') }}"
+      memory_size: 1024
+      timeout: 900
+

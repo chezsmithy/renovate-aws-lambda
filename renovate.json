@@ -20,7 +20,7 @@
     {
       "customType": "regex",
       "description": "Updates aws lambda Versions in custom platform appspec",
-      "fileMatch": "platform-appsepc.yml",
+      "fileMatch": "platform-appspec.yml",
       "matchStrings": [
         "runtime:\\s*'(?<depName>(go|provided\\.|java|python|nodejs))(?<currentValue>[a-z,0-9]*.[0-9,x]*)'"
       ],

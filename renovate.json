@@ -6,7 +6,7 @@
   "packageRules": [
     {
       "description": "replace deprecated go1.x lambda with provided.al2",
-      "matchDatasources": "aws-lambda-2",
+      "matchDatasources": "custom.aws-lambda-2",
       "matchPackageNames": ["go"],
       "matchCurrentValue": "/^1.x/",
       "replacementName": "provided.",
@@ -14,7 +14,7 @@
     },
     {
       "description": "pin nodejs lambda version below 20",
-      "matchDatasources": "aws-lambda-2",
+      "matchDatasources": "custom.aws-lambda-2",
       "matchPackageNames": ["nodejs"],
       "allowedVersions": "<20.x"
     }
@@ -28,7 +28,7 @@
         "runtime:\\s*'(?<depName>(go|provided\\.|java|python|nodejs))(?<currentValue>[a-z,0-9]*.[0-9,x]*)'"
       ],
       "autoReplaceStringTemplate": "runtime: '{{depName}}{{newVersion}}'",
-      "datasourceTemplate": "aws-lambda-2"
+      "datasourceTemplate": "custom.aws-lambda-2"
     }
   ],
   "customDatasources": {

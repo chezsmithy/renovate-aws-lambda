@@ -28,7 +28,8 @@
         "runtime:\\s*'(?<depName>(go|provided\\.|java|python|nodejs))(?<currentValue>[a-z,0-9]*.[0-9,x]*)'"
       ],
       "autoReplaceStringTemplate": "runtime: '{{depName}}{{newVersion}}'",
-      "datasourceTemplate": "custom.aws-lambda-2"
+      "datasourceTemplate": "custom.aws-lambda-2",
+      "versioningTemplate": "loose"
     }
   ],
   "customDatasources": {

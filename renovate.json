@@ -36,7 +36,7 @@
       "defaultRegistryUrlTemplate": "https://endoflife.date/api/aws-lambda.json",
       "format": "json",
       "transformTemplates": [
-        "{ \"releases\": $filter($,function($v) { $contains($v.cycle,\"{{packageName}}\") }).{ \"version\": latest != '' ? latest : cycle, \"releaseTimestamp\": $toMillis(releaseDate) ~> $fromMillis(), \"isDeprecated\": eol = false ? false : $toMillis(eol) <= $toMillis($now()), \"changeLogUrl\": link, \"sourceUrl\": link }, \"homepage\": \"https://endoflife.date\" }"
+        "{ \"releases\": $filter($,function($v) { $contains($v.cycle,\"python\") }).{ \"version\": latest != '' ? latest : cycle, \"releaseTimestamp\": $toMillis(releaseDate) ~> $fromMillis(), \"isDeprecated\": eol = false ? false : $toMillis(eol) <= $toMillis($now()), \"changeLogUrl\": link, \"sourceUrl\": link }, \"homepage\": \"https://endoflife.date\" }"
       ]
     }
   }

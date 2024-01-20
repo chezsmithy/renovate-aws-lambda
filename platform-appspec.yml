@@ -45,7 +45,7 @@ lambdas:
       memory_size: 1024
       timeout: 900
     - function: 'test-main-lambda-nodejs'
-      runtime: 'nodejs16.x'
+      runtime: "nodejs16.x"
       handler: 'main.lambda_handler'
       description: 'Update info-main process'
       source_dir: 'src'

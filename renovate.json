@@ -50,7 +50,7 @@
       "description": "Updates aws lambda Versions in custom platform appspec",
       "fileMatch": "platform-appspec.yml",
       "matchStrings": [
-        "runtime:\\s*'(?<depName>(go|provided\\.|java|python|nodejs))(?<currentValue>[a-z,0-9]*.[0-9,x]*)'"
+        "runtime:\\s*(?:'|\")(?<depName>go|provided\\.|java|python|nodejs|dotnetcore|dotnet)(?<currentValue>[a-z,0-9]*.[0-9,x]*)(?:'|\")"
       ],
       "autoReplaceStringTemplate": "runtime: '{{depName}}{{newVersion}}'",
       "datasourceTemplate": "custom.aws-lambda",

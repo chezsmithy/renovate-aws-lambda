@@ -24,7 +24,7 @@ lambdas:
       memory_size: 1024
       timeout: 900
     - function: 'test-main-lambda-python'
-      runtime: 'python3.7'
+      runtime: 'python3.11'
       handler: 'main.lambda_handler'
       description: 'Update info-main process'
       source_dir: 'src'

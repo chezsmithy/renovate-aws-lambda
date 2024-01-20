@@ -13,10 +13,35 @@
       "replacementVersion": "al2"
     },
     {
-      "description": "pin nodejs lambda version below 20",
+      "description": "replace deprecated dotnetcore lambda with dotnet",
+      "matchDatasources": "custom.aws-lambda",
+      "matchPackageNames": ["dotnetcore"],
+      "replacementName": "dotnet",
+      "replacementVersion": "7"
+    },
+    {
+      "description": "pin nodejs lambda version at 18",
       "matchDatasources": "custom.aws-lambda",
       "matchPackageNames": ["nodejs"],
-      "allowedVersions": "<20.x"
+      "allowedVersions": "<=18.x"
+    },
+    {
+      "description": "pin python lambda version at 3.11",
+      "matchDatasources": "custom.aws-lambda",
+      "matchPackageNames": ["python"],
+      "allowedVersions": "<=3.11"
+    },
+    {
+      "description": "pin java lambda version at 17",
+      "matchDatasources": "custom.aws-lambda",
+      "matchPackageNames": ["java"],
+      "allowedVersions": "<=17"
+    },
+    {
+      "description": "pin dotnet lambda version at 7",
+      "matchDatasources": "custom.aws-lambda",
+      "matchPackageNames": ["dotnet"],
+      "allowedVersions": "<=7"
     }
   ],
   "customManagers": [
